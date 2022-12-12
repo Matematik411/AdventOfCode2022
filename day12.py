@@ -31,10 +31,10 @@ for j_s in range(len(grid)):
         if grid[j_s][i_s] == "a":
             
             visited = set()
-            pq = []
-            pq.append([0, (j_s, i_s)]) 
-            while pq:
-                d, c = pq.pop(0)
+            q = []
+            q.append([0, (j_s, i_s)]) 
+            while q:
+                d, c = q.pop(0)
 
                 if c == goal:
                     if (j_s, i_s) == start:
@@ -53,8 +53,7 @@ for j_s in range(len(grid)):
                     x_n = c[1] + dir[1]
 
                     if ord(grid[y_n][x_n]) <= (ord(grid[c[0]][c[1]]) + 1): 
-                        pq.append((d+1, (y_n, x_n)))
-                
-                pq.sort()
+                        q.append((d+1, (y_n, x_n)))
+
 
 print("b: ", min_walk)
