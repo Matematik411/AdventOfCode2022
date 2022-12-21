@@ -63,6 +63,8 @@ for line in file:
 
     else:
         a, b, c, d = line.split()
+        if c == "/":
+            c = "//"
 
         monkeys[a[:-1]] = (b, d, c)
 
